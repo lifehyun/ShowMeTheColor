@@ -13,11 +13,11 @@ class DominantColors:
     COLORS = None
     LABELS = None
 
-    def __init__(self, image, clusters=3):
+    def __init__(self, IMAGE, clusters=3):
         self.CLUSTERS = clusters
-        self.IMAGE = image
+        self.IMAGE = IMAGE
 
-    def dominantColors(self):
+    def dominantColors(self , img):
         #read image
         #img = cv2.cvtColor(self.IMAGE, cv2.COLOR_BGR2RGB)
         #reshaping to a list of pixels

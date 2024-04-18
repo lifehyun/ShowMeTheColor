@@ -5,11 +5,11 @@ import os
 
 def main():
     # 인자값 받을 인스턴스 생성
-    parser = argparse.ArgumentParser(description = 'Please input your image.')
+    parser = argparse.ArgumentParser(description = 'Please input your image.', argument_default='lifehyun/ShowMeTheColor/res/train/**')
 
     # 입력받을 인자값 등록
-    parser.add_argument('--image', required = False, help='input .jpg or .png file')
-    parser.add_argument('--dir', required = False, help='input image directory')
+    parser.add_argument('--image', required = False, help='input .jpg or .png file' , default='res/test/nfall/1.jpg')
+    parser.add_argument('--dir', required = False, help='input image directory' , default= 'res/test')
 
     # 입력받은 인자값을 args에 저장
     args = parser.parse_args()
@@ -24,7 +24,7 @@ def main():
     ##################################
     #  multiple images in directory  #
     ##################################
-    elif args.dir != None:
+    if args.dir != None:
         dirpath = args.dir
         imgs = os.listdir(dirpath)
         for imgpath in imgs:
